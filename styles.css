@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: cadetblue;
+}
+header {
+    background: white;
+    padding: 20px;
+}
+
+header > h1 {
+   color:blue;
+   text-align: center;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+}
+
+.score-board {
+    margin: 20px auto;
+    border: 3px solid black;
+    width: 30vh;
+
+}

@@ -1,3 +1,45 @@
+# My first attempt at Java Script
+
+## Steps I took to create the Rock, paper, scissors game
+
+### Task 1 - logic
+
+I was a bit confused at the beginning about where the scissors has gone, but I realised this is just to test my logic around it and see if the result generated after the `if` statement is working. 
+
+I just chose to play with *rock* and *paper* as suggested. 
+
+I have chosen the variable the two variable :
+
+``` JS
+
+let playerMove = "rock";
+let computerMove = "paper";
+
+```
+I had to declare the varialbe `results` to store and print my results generated after the `if` statement. 
+
+``` JS
+  let result;
+    if (playerMove === "rock" && computerMove === "paper"){
+        result = "Computer Wins";
+    }
+  console.log(results);
+```
+I used `console.log` to print my result and check the logic behind the `if` statement. It worked! I changed the variable and checked the winner for each of the three posibilities. 
+
+_The logic works until now!_
+
+
+
+
+
+
+
+
+
+
+
+
 # Rock, Paper, Scissors!
 
 Work through the tasks below **one by one**. Make sure you have completed each task before moving on to the next. Some steps will require you to change code you've already written.
