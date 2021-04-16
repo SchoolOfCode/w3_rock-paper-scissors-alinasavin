@@ -1,9 +1,9 @@
 // task 1
 
-let playerMove = "paper";
-let computerMove = "rock";
+//let playerMove = "paper";
+//let computerMove = "rock";
 
-let result;
+//let result;
 /*if (playerMove === "rock" && computerMove === "paper"){
     result = "Computer Wins";
 }*/
@@ -13,12 +13,15 @@ let result;
     result = "Draw";
 }*/
 
-if (playerMove === "paper" && computerMove === "rock"){
+/*if (playerMove === "paper" && computerMove === "rock"){
     result = "Player Wins";
 }
-console.log(result);
+console.log(result);*/
 
-/*let playerMove = prompt("Choose between rock,paper, scissors");
+//task 2 - 4
+
+
+let playerMove = prompt("Choose between rock,paper, scissors");
 let moves = ['rock','paper', 'scissors'];
 let computerMove = moves[Math.floor(Math.random() * 3)];
 console.log(computerMove);
@@ -64,4 +67,4 @@ function checkWinner (playerMove, computerMove){
 
 let result = checkWinner(playerMove, computerMove);
 console.log(result);
-alert(result);*/
+alert(result);

@@ -16,7 +16,7 @@ let playerMove = "rock";
 let computerMove = "paper";
 
 ```
-I had to declare the varialbe `results` to store and print my results generated after the `if` statement. 
+I had to declare the variable `result` to store and print my results generated after the `if` statement. 
 
 ``` JS
   let result;
@@ -28,6 +28,15 @@ I had to declare the varialbe `results` to store and print my results generated 
 I used `console.log` to print my result and check the logic behind the `if` statement. It worked! I changed the variable and checked the winner for each of the three posibilities. 
 
 _The logic works until now!_
+
+### Task 2 - 4
+
+Now that I have tested the logic it made more sense for me to define the `playerMove` and assign it the user input.  I have introduce another variable called `moves` where I have entered all the options available in an `array`. For the `computerMove` variable I have used the `Math.random()` function on the `moves` variable. 
+
+Now that I have both `playerMove` and `computerMove` defined I could apply the `checkWinner` function on all the possible options generating the correct return. 
+
+
+
 
 
 
