@@ -2,7 +2,12 @@
 
 let playerScore = 0;
 let computerScore = 0;
-
+let gameSummary = {
+    draws: 0,
+    wins: 0, 
+    losses: 0,
+    games: 0,
+};
 //storing DOM variables for future use
 const playerScore_span = document.getElementById("player-score");
 const computerScore_span = document.getElementById("computer-score");
@@ -11,6 +16,10 @@ const result_p = document.querySelector(".result > p");
 const rock_div = document.getElementById("rock");
 const paper_div = document.getElementById("paper");
 const scissors_div = document.getElementById("scissors");
+const wins_span = document.getElementById("wins");
+const losses_span = document.getElementById("losses");
+const draws_span = document.getElementById("draws");
+const games_span = document.getElementById("games");
 
 const player_id = document.getElementById("player-label");
 
@@ -36,29 +45,41 @@ function getComputerMove(){
 
 function win(playerMove, computerMove) {
     playerScore++;
+    gameSummary.wins++;
+    gameSummary.games++;
+    wins_span.innerHTML = gameSummary.wins;
+    games_span.innerHTML = gameSummary.games;
     playerScore_span.innerHTML = playerScore;
     computerScore_span.innerHTML = computerScore;
-    let smallPlayerWord = "player".fontsize(3).sub();
-    let smallComputerWord = "computer".fontsize(3).sub();
-    result_p.innerHTML = `${playerMove}${smallPlayerWord} beats  ${computerMove}${smallComputerWord} .  You win! 🎉  `;
+    let smallPlayerWord = "your".fontsize(3).sub();
+    let smallComputerWord = "computer's".fontsize(3).sub();
+    result_p.innerHTML = `${smallPlayerWord}${playerMove} beats  ${smallComputerWord}${computerMove} .  You win! 🎉  `;
 }
 
 // define lose function
 function lose(playerMove, computerMove) {
     computerScore++;
+    gameSummary.losses++;
+    gameSummary.games++;
+    losses_span.innerHTML = gameSummary.losses;
+    games_span.innerHTML = gameSummary.games;
     computerScore_span.innerHTML = computerScore;
     playerScore_span.innerHTML = playerScore;
-    let smallPlayerWord = "player".fontsize(3).sub();
-    let smallComputerWord = "computer".fontsize(3).sub();
-    result_p.innerHTML = `${playerMove}${smallPlayerWord} loses to ${computerMove}${smallComputerWord} . You lost 😞`;
+    let smallPlayerWord = "your".fontsize(3).sub();
+    let smallComputerWord = "computer's".fontsize(3).sub();
+    result_p.innerHTML = `${smallPlayerWord} ${playerMove} loses to ${smallComputerWord}${computerMove} . You lost 😞`;
 }
 
 // define draw function
 
 function draw(playerMove, computerMove) {
-    let smallPlayerWord = "player".fontsize(3).sub();
-    let smallComputerWord = "computer".fontsize(3).sub();
-    result_p.innerHTML = `${playerMove}${smallPlayerWord} the same as  ${computerMove}${smallComputerWord} . It's a draw. 🐵 `;
+    gameSummary.draws++;
+    gameSummary.games++;
+    draws_span.innerHTML = gameSummary.draws;
+    games_span.innerHTML = gameSummary.games;
+    let smallPlayerWord = "your".fontsize(3).sub();
+    let smallComputerWord = "computer's".fontsize(3).sub();
+    result_p.innerHTML = `${smallPlayerWord}${playerMove} is the same as  ${smallComputerWord}${computerMove} . It's a draw. 🐵 `;
 }
 
 

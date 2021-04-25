@@ -12,17 +12,24 @@
       <h1>Rock Paper Scissors</h1>
     </header>
     <div class="user-input">
-    <input id="text" placeholder="Enter player name"></input>
-    <button onclick="selectText()">Start</button>
-  </div>
-    <div class="score-board">
-     <div class="badge" id="player-label">Player</div>
-     <div class="badge" id="computer-label">Computer</div>
-     <span id="player-score">0</span>:<span id="computer-score">0</span>
-   </div>
-
+      <input id="text" placeholder="Enter player name" maxlength="10"></input>
+      <button onclick="selectText()">Start</button>
+    </div>
+    <div class="panel">
+      <div class="score-board">
+        <div class="badge" id="player-label">Player</div>
+        <div class="badge" id="computer-label">Computer</div>
+        <span id="player-score">0</span>:<span id="computer-score">0</span>
+      </div>
+      <div class="game-summary">
+        <p>Wins: <span id="wins">0</span> </p>
+        <p>Losses: <span id="losses">0</span></p>
+        <p>Draws: <span id="draws">0</span></p>
+        <p>Games played: <span id="games">0</span></p>
+      </div>
+    </div>
    <p id="action-message">Choose your weapon</p>
-   
+
     <div class="choices">
       <div class="choice" id="rock">
         <img src="rock.png" alt="rock">

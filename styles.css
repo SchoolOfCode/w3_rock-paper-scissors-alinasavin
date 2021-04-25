@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: cadetblue;
+  background-color: #c8e7ff;
 }
 header {
   background: white;
@@ -18,11 +18,15 @@ header > h1 {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.panel {
+  display: flex;
+  flex-direction: row;
+}
 .score-board {
-  margin: 20px auto;
+  margin: 20px 200px;
   border: 3px solid black;
   width: 40vh;
-  color: white;
+  color: black;
   font-size: 46px;
   border-radius: 5px;
   text-align: center;
@@ -31,9 +35,21 @@ header > h1 {
   position: relative;
 }
 
+.game-summary {
+  margin: 20px 200px;
+  border: 3px solid black;
+  width: 30vh;
+  text-align: center;
+}
+
+.game-summary p {
+  font-size: 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
 .badge {
   background: turquoise;
-  color: white;
+  color: black;
   font-size: 32px;
   padding: 5px 10px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -67,7 +83,7 @@ header > h1 {
 
 .choices {
   text-align: center;
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 .choice {
