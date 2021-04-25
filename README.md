@@ -43,6 +43,10 @@ I have used a `while loop` where I have included the `player Move` and `computer
 
 I have also created an `object` where I kept my game summary score that was tracked within the `while loop`. The player has now the option to play for as long as they want and can stop after each round. I have tested and it is working within the console.
 
+### Task 7-8
+
+Got rid of the `prompt` and `confirm` linked with the `DOM`. I have decided to use `switch cases` instead of `if statements`. Replaced `while loop` with the `addEventListener` on the `click` of the image.
+
 # Rock, Paper, Scissors!
 
 Work through the tasks below **one by one**. Make sure you have completed each task before moving on to the next. Some steps will require you to change code you've already written.
