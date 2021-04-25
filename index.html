@@ -11,16 +11,18 @@
     <header>
       <h1>Rock Paper Scissors</h1>
     </header>
-
+    <div class="user-input">
+    <input id="text" placeholder="Enter player name"></input>
+    <button onclick="selectText()">Start</button>
+  </div>
     <div class="score-board">
-     <div class="badge" id="user-label">Player</div>
+     <div class="badge" id="player-label">Player</div>
      <div class="badge" id="computer-label">Computer</div>
-     <span id="user-score">0</span>:<span id="computer-score">0</span>
+     <span id="player-score">0</span>:<span id="computer-score">0</span>
    </div>
 
-    <div class="result-message">
-      <p>Paper covers rock. You win!</p>
-    </div>
+   <p id="action-message">Choose your weapon</p>
+   
     <div class="choices">
       <div class="choice" id="rock">
         <img src="rock.png" alt="rock">
@@ -32,11 +34,9 @@
         <img src="scissors.png" alt="scrissors">
       </div>
     </div>
-    <p id="action-message">Choose your move</p>
-  <body>
+    <div class="result">
+      <p>Paper covers rock. You win!</p>
+    </div>
+    <script src="main.js"></script>
   </body>
-
-  <script src="main.js"></script>
-  
-
 </html>

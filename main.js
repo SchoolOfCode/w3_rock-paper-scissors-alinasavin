@@ -1,116 +1,119 @@
-// task 1
+// Score variables
 
-//let playerMove = "paper";
-//let computerMove = "rock";
+let playerScore = 0;
+let computerScore = 0;
 
-//let result;
-/*if (playerMove === "rock" && computerMove === "paper"){
-    result = "Computer Wins";
-}*/
+//storing DOM variables for future use
+const playerScore_span = document.getElementById("player-score");
+const computerScore_span = document.getElementById("computer-score");
+const scoreBoard_div = document.querySelector(".score-board");
+const result_p = document.querySelector(".result > p");
+const rock_div = document.getElementById("rock");
+const paper_div = document.getElementById("paper");
+const scissors_div = document.getElementById("scissors");
+
+const player_id = document.getElementById("player-label");
 
 
-/*if (playerMove === "rock" && computerMove === "rock"){
-    result = "Draw";
-}*/
+// get player name printed
 
-/*if (playerMove === "paper" && computerMove === "rock"){
-    result = "Player Wins";
-}
-console.log(result);*/
-
-//task 2 - 4
-
-const outcome =["Draw", "Win", "Lose"];
-
-let playGame = true;
-
-// we can use an array as well instead of an object:
-/*let gameSummary = [
-    0,
-    0,
-    0,
-    0
-];*/
-
-// You would call the value using the index : 
-// gameSummary[0]= draws, gameSummary[1]=wins , gameSummary[2]=losses, gameSummary[3]=games;
-
-let gameSummary = {
-
-    draws: 0,
-    wins: 0, 
-    losses: 0,
-    games: 0,
-};
-
-while (playGame){
-    let playerMove = prompt("Choose between rock,paper, scissors").toLowerCase();
+function selectText () {
+  
+    let userInput = document.getElementById("text").value;
+    player_id.innerText = userInput;
+  
+  }
+  
+// get computer choice
+function getComputerMove(){
     let moves = ['rock','paper', 'scissors'];
-    let computerMove = moves[Math.floor(Math.random() * 3)];
-    console.log(computerMove);
+    let randomNumber= Math.floor(Math.random() * 3);
+    return moves[randomNumber];
+}
 
-    let result = checkWinner(playerMove, computerMove);
+// define win function
+// update score and win message
 
-    console.log(outcome[result]);
-    let confirm = prompt("Do you want to  continue playing? yes or no?").toLowerCase();
+function win(playerMove, computerMove) {
+    playerScore++;
+    playerScore_span.innerHTML = playerScore;
+    computerScore_span.innerHTML = computerScore;
+    let smallPlayerWord = "player".fontsize(3).sub();
+    let smallComputerWord = "computer".fontsize(3).sub();
+    result_p.innerHTML = `${playerMove}${smallPlayerWord} beats  ${computerMove}${smallComputerWord} .  You win! 🎉  `;
+}
 
-    
-    if(result === 0){
-        gameSummary.draws++;
-        gameSummary.games++;
-    }
+// define lose function
+function lose(playerMove, computerMove) {
+    computerScore++;
+    computerScore_span.innerHTML = computerScore;
+    playerScore_span.innerHTML = playerScore;
+    let smallPlayerWord = "player".fontsize(3).sub();
+    let smallComputerWord = "computer".fontsize(3).sub();
+    result_p.innerHTML = `${playerMove}${smallPlayerWord} loses to ${computerMove}${smallComputerWord} . You lost 😞`;
+}
 
-    if(result === 1){
-        gameSummary.wins++;
-        gameSummary.games++;
-    }
+// define draw function
 
-    if(result === 2){
-        gameSummary.losses++;
-        gameSummary.games++;
-    }
+function draw(playerMove, computerMove) {
+    let smallPlayerWord = "player".fontsize(3).sub();
+    let smallComputerWord = "computer".fontsize(3).sub();
+    result_p.innerHTML = `${playerMove}${smallPlayerWord} the same as  ${computerMove}${smallComputerWord} . It's a draw. 🐵 `;
+}
 
-    
-    console.log(gameSummary);
 
-    if (confirm === "no"){
-        playGame = false;
-    }
+// check for a winner
 
-} 
-    
-    
-
-   
-function checkWinner (playerMove, computerMove){
-
-    if(playerMove === computerMove){
-        return 0;
-    }
-    if (playerMove === "rock" && computerMove === "scissors"){
-        return 1;
-    }
-    
-    if (playerMove === "rock" && computerMove === "paper"){
-        return 2;
-    }
-    
-    if (playerMove === "paper" && computerMove === "scissors"){
-        return 2;
-    }
-    
-    if (playerMove === "paper" && computerMove === "rock"){
-        return 1;
-    }
-    
-    
-    if (playerMove === "scissors" && computerMove === "rock"){
-        return 2;
-    }
-    
-    if (playerMove === "scissors" && computerMove === "paper"){
-        return 1;
+function checkWinner(playerMove){
+    let computerMove = getComputerMove();
+    switch (playerMove + computerMove){
+        //player wins
+        case "rockscissors":
+        case "paperrock":
+        case "scissorspaper":
+            win(playerMove, computerMove);
+            break;  
+        //player loses
+        case "rockpaper":
+        case "paperscissors" :
+        case "scissorsrock":
+            lose(playerMove, computerMove);
+            break;
+        // draw
+        case "rockrock":
+        case "paperpaper":
+        case "scissorsscissors":
+            draw(playerMove, computerMove);
+            break;
     }
 }
+
+
+
+function playGame() {
+
+// event listeners for each button
+rock_div.addEventListener('click', function() {
+    checkWinner("rock");
+})
+paper_div.addEventListener('click', function(){
+    checkWinner("paper");
+})
+scissors_div.addEventListener('click', function(){
+    checkWinner("scissors");
+})
+}
+
+playGame();
+
+
+
+
+
+
+
+
+
+
 
 
