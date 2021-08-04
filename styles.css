@@ -1,0 +1,115 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #c8e7ff;
+}
+header {
+  background: white;
+  padding: 20px;
+}
+
+header > h1 {
+  color: blue;
+  text-align: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.panel {
+  display: flex;
+  flex-direction: row;
+}
+.score-board {
+  margin: 20px 200px;
+  border: 3px solid black;
+  width: 40vh;
+  color: black;
+  font-size: 46px;
+  border-radius: 5px;
+  text-align: center;
+  padding: 15px 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+}
+
+.game-summary {
+  margin: 20px 200px;
+  border: 3px solid black;
+  width: 30vh;
+  text-align: center;
+}
+
+.game-summary p {
+  font-size: 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.badge {
+  background: turquoise;
+  color: black;
+  font-size: 32px;
+  padding: 5px 10px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#player-label {
+  position: absolute;
+  top: 20px;
+  left: -50px;
+  border-radius: 5px;
+}
+
+#computer-label {
+  position: absolute;
+  top: 20px;
+  right: -100px;
+  border-radius: 5px;
+}
+
+.result {
+  font-size: 50px;
+  color: black;
+}
+
+.result > p {
+  text-align: center;
+  margin: 50px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+}
+
+.choices {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.choice {
+  display: inline-block;
+  border: 4px solid black;
+  border-radius: 10%;
+  padding: 10px;
+  margin: 0 20px;
+  transition: all 0.3s ease;
+}
+
+.choice:hover {
+  cursor: pointer;
+  background: cornflowerblue;
+}
+
+#action-message {
+  text-align: center;
+  color: black;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  font-size: 32px;
+  margin-top: 50px;
+}
+
+.user-input {
+  text-align: center;
+  margin: 0 100px;
+}

@@ -1,3 +1,56 @@
+# My first attempt at Java Script
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/2b9bae7a-df23-474b-b091-7972c78b8143/deploy-status)](https://app.netlify.com/sites/rockpaperscrissors/deploys)
+
+[Try me here](https://rockpaperscrissors.netlify.app)
+
+## Steps I took to create the Rock, paper, scissors game
+
+### Task 1 - logic
+
+I was a bit confused at the beginning about where the scissors has gone, but I realised this is just to test my logic around it and see if the result generated after the `if` statement is working.
+
+I just chose to play with _rock_ and _paper_ as suggested.
+
+I have chosen the variable the two variable :
+
+```JS
+
+let playerMove = "rock";
+let computerMove = "paper";
+
+```
+
+I had to declare the variable `result` to store and print my results generated after the `if` statement.
+
+```JS
+  let result;
+    if (playerMove === "rock" && computerMove === "paper"){
+        result = "Computer Wins";
+    }
+  console.log(results);
+```
+
+I used `console.log` to print my result and check the logic behind the `if` statement. It worked! I changed the variable and checked the winner for each of the three posibilities.
+
+_The logic works until now!_
+
+### Task 2 - 4
+
+Now that I have tested the logic it made more sense for me to define the `playerMove` and assign it the user input. I have introduce another variable called `moves` where I have entered all the options available in an `array`. For the `computerMove` variable I have used the `Math.random()` function on the `moves` variable.
+
+Now that I have both `playerMove` and `computerMove` defined I will apply the `checkWinner` function on all the possible options generating the correct return.
+
+### Task 5-6
+
+I have used a `while loop` where I have included the `player Move` and `computer Move` and the results of the `check winner` function. I was a bit unsure at the beggining, but the function doesn't need to be within the loop, as we are calling it with the `result` variable.
+
+I have also created an `object` where I kept my game summary score that was tracked within the `while loop`. The player has now the option to play for as long as they want and can stop after each round. I have tested and it is working within the console.
+
+### Task 7-8
+
+Got rid of the `prompt` and `confirm` linked with the `DOM`. I have decided to use `switch cases` instead of `if statements`. Replaced `while loop` with the `addEventListener` on the `click` of the image.
+
 # Rock, Paper, Scissors!
 
 Work through the tasks below **one by one**. Make sure you have completed each task before moving on to the next. Some steps will require you to change code you've already written.
@@ -10,8 +63,8 @@ We will hard-code each move in variables so that we can check our game logic, bu
 
 ```js
 // change these variables to test your code
-let playerMove = "rock";
-let computerMove = "paper";
+let playerMove = 'rock';
+let computerMove = 'paper';
 ```
 
 Plan out the possible combinations of rock, paper and scissors for the two moves. Then convert that logic to code and console.log the result of the game.
@@ -33,7 +86,7 @@ function getWinner(player1, player2) {
   // code goes here...
 }
 
-let result = getWinner("rock", "paper");
+let result = getWinner('rock', 'paper');
 ```
 
 This will be deemed as complete when the function can be called with any combination of valid moves and returns the appropriate number.
